@@ -13,10 +13,9 @@ node {
     env.BUILDIMG=imageName
 
     stage "Build"
-    
         sh "docker build -t ${imageName} -f applications/hello-kenzan/Dockerfile applications/hello-kenzan"
-    
     stage "Push"
+        sh "docker login 192.168.80.180:5000 -u admin -p Harbor12345"
         sh "docker push ${imageName}"
 
     stage "Deploy"

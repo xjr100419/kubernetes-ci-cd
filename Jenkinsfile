@@ -17,7 +17,7 @@ node {
         sh "docker build -t ${imageName} -f applications/hello-kenzan/Dockerfile applications/hello-kenzan"
     
     stage "Push"
-
+        sh "docker login -u admin -p Harbor12345 192.168.80.180:5000"
         sh "docker push ${imageName}"
 
     stage "Deploy"

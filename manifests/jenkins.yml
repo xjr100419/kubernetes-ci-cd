@@ -74,3 +74,4 @@ spec:
       - name: jenkins-persistent-storage
         persistentVolumeClaim:
           claimName: jenkins-claim
+      serviceAccountName: jenkins-admin

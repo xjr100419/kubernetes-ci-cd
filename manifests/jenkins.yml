@@ -67,6 +67,8 @@ spec:
           mountPath: /root/.jenkins
         - name: docker
           mountPath: /var/run/docker.sock
+        - name: maven
+          mountPath: /root/.m2/repository
       volumes:
       - name: docker
         hostPath:
@@ -74,4 +76,7 @@ spec:
       - name: jenkins-persistent-storage
         persistentVolumeClaim:
           claimName: jenkins-claim
+      - name: maven
+        hostPath:
+          path: /data/jenkins_maven
       serviceAccountName: jenkins-admin

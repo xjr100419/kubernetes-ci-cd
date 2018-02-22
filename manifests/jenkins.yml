@@ -69,6 +69,8 @@ spec:
           mountPath: /var/run/docker.sock
         - name: maven
           mountPath: /root/.m2/repository
+        - name: timezone
+          mountPath: /etc/timezone
       volumes:
       - name: docker
         hostPath:
@@ -79,4 +81,7 @@ spec:
       - name: maven
         hostPath:
           path: /data/jenkins_maven
+      - name: timezone
+        hostPath:
+          path: /data/timezone
       serviceAccountName: jenkins-admin

@@ -2,6 +2,7 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   name: jenkins
+  namespace: kube-dms2
   labels:
     type: local
 spec:
@@ -17,6 +18,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: jenkins-claim
+  namespace: kube-dms2
 spec:
   accessModes:
     - ReadWriteOnce

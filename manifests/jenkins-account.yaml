@@ -4,7 +4,7 @@ metadata:
   labels:
     k8s-app: jenkins
   name: jenkins-admin
-  namespace: default
+  namespace: kube-dms2
 
 ---
 kind: ClusterRoleBinding
@@ -16,7 +16,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: jenkins-admin
-    namespace: default
+    namespace: kube-dms2
 roleRef:
   kind: ClusterRole
   name: cluster-admin

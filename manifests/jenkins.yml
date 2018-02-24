@@ -41,8 +41,6 @@ spec:
     app: jenkins
     tier: jenkins
   type: NodePort
-  externalIPs:
-     - 192.168.80.186
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
